@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable no-shadow */
+/* eslint-disable linebreak-style */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
@@ -52,8 +54,8 @@ function CadastroCategoria() {
         />
 
         <FormField
-          label="Descrição:"
-          type="spellcheck"
+          label="Descrição"
+          type="textarea"
           name="descricao"
           value={values.descricao}
           onChange={handleChange}
@@ -72,9 +74,9 @@ function CadastroCategoria() {
         </Button>
       </form>
       <ul>
-        {categorias.map((categorias, indice) => (
-          <li key={`${categorias}${indice}`}>
-            {categorias.name}
+        {categorias.map((categoria) => (
+          <li key={`${categoria.nome}`}>
+            {categoria.titulo}
           </li>
         ))}
       </ul>
